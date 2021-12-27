@@ -9,7 +9,7 @@ import moreperson from '../public/assets/cards/moreperson.png';
 
 import Image from 'next/image';
 
-const Cards = () => {
+const Cards = ({ name, currentbid, start, end }) => {
 	return (
 		<div className="bg-[#262D3A] max-w-max p-3 w-full rounded-xl sm:min-w-max">
 			<div className="relative">
@@ -30,10 +30,10 @@ const Cards = () => {
 			</div>
 			<div className="py-2 flex w-full items-center justify-between text-white font-normal text-[14px]">
 				<p>Current Bid: </p>
-				<p className="text-[#6763FD]">6.34 ETH</p>
+				<p className="text-[#6763FD]">{currentbid} ETH</p>
 			</div>
 			<div className="py-2 text-white font-medium">
-				<h1>Water Bender</h1>
+				<h1>{name}</h1>
 			</div>
 			<div className="py-4 text-white border-t-[#FFFFFF1A] border-t flex items-center">
 				{[person1, person2, person3, person4, person5, moreperson].map(

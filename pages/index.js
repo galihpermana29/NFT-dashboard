@@ -1,17 +1,12 @@
 import Banner from '../components/Banner';
 import Cards from '../components/Cards';
 import Category from '../components/Category';
-import Message from '../components/Message';
-import Money from '../components/Money';
 import Navbar from '../components/Navbar';
-import Notification from '../components/Notification';
-import Profile from '../components/Profile';
-import Searchbar from '../components/Searchbar';
 import SecondaryBar from '../components/SecondaryBar';
 import ViewAvatar from '../components/ViewAvatar';
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
+export default function Home({ topArtist, recentActivites, artworks }) {
 	return (
 		<div
 			className={` bg-[#1B1E2A] w-full grid grid-rows-[max-content_max-content_max-content] min-h-screen sm:px-3 pr-6 grid-cols-6 gap-6 overflow-hidden`}
@@ -32,7 +27,7 @@ export default function Home() {
 				<div>
 					<h1 className="text-[20px] font-semibold mb-5">Top Artist</h1>
 				</div>
-				{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((data, idx) => {
+				{topArtist.map((data, idx) => {
 					return (
 						<div
 							key={idx}
@@ -40,10 +35,7 @@ export default function Home() {
 						>
 							<p className="font-semibold">{idx + 1}.</p>
 							<div className=" flex flex-col justify-center items-center w-full">
-								<ViewAvatar
-									main={'Galih Zukenbererm'}
-									second={'@galihidk'}
-								/>
+								<ViewAvatar main={data.name} second={data.username} />
 							</div>
 						</div>
 					);
@@ -76,10 +68,15 @@ export default function Home() {
 				<div
 					className={`grid grid-cols-[repeat(auto-fit,minmax(250px,max-content))] gap-5 sm:flex sm:grow sm:overflow-x-auto sm:w-full sm:grid-cols-none ${styles.example}`}
 				>
-					{[1, 2, 3, 4, 5, 6, 7, 8].map((data, idx) => {
+					{artworks.map((data, idx) => {
 						return (
 							<div key={idx} className="">
-								<Cards />
+								<Cards
+									name={data.name}
+									currentbid={data.currentBid}
+									start={data.bid_starts}
+									end={data.bid_ends}
+								/>
 							</div>
 						);
 					})}
@@ -94,7 +91,7 @@ export default function Home() {
 					</h1>
 				</div>
 				<div className="space-y-4">
-					{[1, 2, 3, 4, 5, 6, 7, 8].map((data, idx) => {
+					{recentActivites.map((data, idx) => {
 						return (
 							<div
 								className="flex flex-col justify-center items-center bg-[#FFFFFF0D] p-3 rounded-[12px]"
@@ -102,8 +99,8 @@ export default function Home() {
 							>
 								<ViewAvatar
 									button={false}
-									main={'Water Bender'}
-									second={'Purchased by you for 0,5 ETH'}
+									main={data.name}
+									second={data.message}
 								/>
 							</div>
 						);
@@ -112,4 +109,27 @@ export default function Home() {
 			</div>
 		</div>
 	);
+}
+
+export async function getServerSideProps(ctx) {
+	const res = await fetch(
+		'https://6196ed95af46280017e7e326.mockapi.io/waveast/api/nft-marketplace/top-artist'
+	);
+	const res1 = await fetch(
+		'https://6196ed95af46280017e7e326.mockapi.io/waveast/api/nft-marketplace/recent-activities'
+	);
+	const res2 = await fetch(
+		'https://6196ed95af46280017e7e326.mockapi.io/waveast/api/nft-marketplace/featured-artworks'
+	);
+	const topArtist = await res.json();
+	const recentActivites = await res1.json();
+	const artworks = await res2.json();
+
+	return {
+		props: {
+			topArtist,
+			recentActivites,
+			artworks,
+		},
+	};
 }
