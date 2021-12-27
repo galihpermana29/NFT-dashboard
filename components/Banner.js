@@ -8,7 +8,7 @@ const Banner = () => {
 				<Image src={banner} alt={'banner'} />
 			</div> */}
 			<div className="pl-20 text-white sm:pl-5">
-				<h1 className="text-[40px] font-bold mb-5 sm:text-[22px]">
+				<h1 className="text-[40px] font-bold mb-5 sm:mb-2 sm:text-[22px]">
 					One Stop NFT Marketplace
 				</h1>
 				<p className="text-[18px] sm:text-[15px]">

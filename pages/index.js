@@ -18,7 +18,7 @@ export default function Home({ topArtist, recentActivites, artworks }) {
 				<SecondaryBar />
 			</div>
 
-			<div className="sm:ml-0 ml-[140px] col-span-4 h-fit overflow-hidden sm:col-span-6 gap-6 grid">
+			<div className="sm:ml-0 ml-[140px] col-span-4 h-fit overflow-hidden sm:col-span-6 gap-6 grid sm:mt-[48px]">
 				<Banner />
 			</div>
 			<div

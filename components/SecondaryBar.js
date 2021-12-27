@@ -8,7 +8,7 @@ import menu from '../public/assets/searchbar/menu.png';
 
 const SecondaryBar = () => {
 	return (
-		<div className="sm:ml-0 ml-[140px] grid grid-cols-6 sm:grid-cols-[40px_1fr_1fr_1fr_1fr_1fr] h-fit gap-6 sm:gap-2 sm:mt-6">
+		<div className="sm:ml-0 ml-[140px] grid grid-cols-6 sm:grid-cols-[40px_1fr_1fr_1fr_1fr_1fr] h-fit gap-6 sm:gap-2 sm:mt-0 sm:fixed sm:bg-[#1B1E2A] sm:py-2 sm:z-30">
 			<div className="sm:col-span-1 sm:flex sm:justify-center sm:items-center hidden sm:visible sm:w-full ">
 				<Image src={menu} alt={'a'} />
 			</div>
