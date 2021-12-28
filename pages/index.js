@@ -9,14 +9,11 @@ import styles from '../styles/Home.module.css';
 export default function Home({ topArtist, recentActivites, artworks }) {
 	return (
 		<div
-			className={` bg-[#1B1E2A] w-full grid grid-rows-[max-content_max-content_max-content] min-h-screen sm:px-3 pr-6 grid-cols-6 gap-6 overflow-hidden`}
+			className={`grid grid-rows-[max-content_max-content_max-content] bg-[#1B1E2A] w-full min-h-screen sm:px-3 grid-cols-6 gap-6 overflow-hidden`}
 		>
-			<div className="sm:hidden">
-				<Navbar />
-			</div>
-			<div className="col-span-6 ">
+			{/* <div className="col-span-6 ">
 				<SecondaryBar />
-			</div>
+			</div> */}
 
 			<div className="sm:ml-0 ml-[140px] col-span-4 h-fit overflow-hidden sm:col-span-6 gap-6 grid sm:mt-[48px]">
 				<Banner />
