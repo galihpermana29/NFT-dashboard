@@ -11,10 +11,6 @@ import Link from 'next/link';
 
 const SecondaryBar = ({ setHamburgers }) => {
 	const { data: session } = useSession();
-	if (session) {
-		console.log(session, 'anjas');
-	}
-	console.log(session, 'data session');
 	return (
 		<div className="sm:ml-0 ml-[140px] grid grid-cols-6 sm:grid-cols-[40px_1fr_1fr_1fr_1fr_1fr] h-fit gap-6 sm:gap-2 sm:mt-0 sm:fixed sm:bg-[#1B1E2A] sm:py-2 sm:z-30 py-6">
 			<div

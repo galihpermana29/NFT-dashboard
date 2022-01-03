@@ -6,8 +6,6 @@ import { SessionProvider } from 'next-auth/react';
 // import styles from '../styles/globals.css';
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
-	console.log(Component);
-	console.log(pageProps.session);
 	const [navbarHamburgerIsClicked, setHamburger] = useState(false);
 	const whenHamburgerisClicked = () => {
 		setHamburger(!navbarHamburgerIsClicked);
