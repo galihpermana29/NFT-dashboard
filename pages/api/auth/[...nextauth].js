@@ -7,9 +7,6 @@ import GoogleProvider from 'next-auth/providers/google';
 
 // next auth akan otomatis memberikan opsi ingin login by google atau github
 export default NextAuth({
-	options: {
-		site: process.env.NEXTAUTH_URL,
-	},
 	providers: [
 		GoogleProvider({
 			clientId: process.env.GOOGLE_ID,
