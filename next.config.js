@@ -1,6 +1,6 @@
 module.exports = {
 	images: {
-		domains: ['cdn.fakercloud.com'],
+		domains: ['lh3.googleusercontent.com', 'avatars.githubusercontent.com'],
 	},
 
 	reactStrictMode: true,

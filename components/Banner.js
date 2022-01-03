@@ -20,11 +20,11 @@ const Banner = () => {
 				<div className="flex items-center space-x-3 sm:hidden">
 					<Button
 						text={'Start Create'}
-						tail={'px-5 rounded-[8px] py-2 bg-white text-[#6763FD]'}
+						tail={'px-5 rounded-[8px] py-2 bg-white text-[#6763FD] max-w-max'}
 					/>
 					<Button
 						text={'How It Works'}
-						tail={'px-5 rounded-[8px] py-2 bg-white text-[#6763FD]'}
+						tail={'px-5 rounded-[8px] py-2 bg-white text-[#6763FD] max-w-max'}
 					/>
 				</div>
 			</div>

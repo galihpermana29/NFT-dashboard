@@ -17,7 +17,7 @@ const ViewAvatar = ({ button = true, main, second, img = profile3 }) => {
 			{button ? (
 				<Button
 					tail={
-						'py-2 px-3 rounded-[12px] bg-gradient-to-r from-[#6763FD] to-[#B84EF1] text-white'
+						'py-2 px-3 rounded-[12px] bg-gradient-to-r from-[#6763FD] to-[#B84EF1] text-white max-w-max'
 					}
 					text={'Follow'}
 				/>
