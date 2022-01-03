@@ -19,10 +19,10 @@ const SecondaryBar = ({ setHamburgers }) => {
 			>
 				<Image src={menu} alt={'a'} />
 			</div>
-			<div className="col-span-3 sm:col-span-4 h-[58px] sm:h-[40px] ">
+			<div className="col-span-3 sm:col-span-4 h-[58px] sm:h-[40px]">
 				<Searchbar />
 			</div>
-			<div className="col-span-1 h-[58px] overflow-hidden sm:hidden ">
+			<div className="col-span-1 h-[58px] overflow-hidden sm:hidden">
 				<Money />
 			</div>
 			<div className="col-span-2 sm:col-span-1 h-[58px] sm:h-[40px] items-center flex w-full gap-6 sm:gap-3 sm:w-[175px] sm:justify-evenly">
