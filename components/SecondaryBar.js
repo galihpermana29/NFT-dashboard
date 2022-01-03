@@ -37,7 +37,7 @@ const SecondaryBar = ({ setHamburgers }) => {
 						<Profile name={session.user.name} img={session.user.image} />
 					</>
 				) : (
-					<div className="flex justify-center w-full space-x-5">
+					<div className="flex justify-center w-full space-x-5 sm:space-x-2">
 						<Button
 							text={'Register'}
 							tail={
